@@ -1,0 +1,17 @@
+{{ $number  := 0 }}
+{{ range .speakers }}
+<tr>
+    {{ $number = increment $number 1 }}
+    <td>{{ $number }}</td>
+    <td>{{ .SpeakerName }}</td>
+    <td>{{ .Facebook }}</td>
+    <td>{{ .Instagram }}</td>
+    <td>{{ .Twiter }}</td>
+    <td>{{ .Linkdin }}</td>
+    <td><img src="../../static/img/speakers/{{ .Image }}"/></td>
+    <td>
+        <button data-id="{{ .Id }}" class="btn btn-danger btn-sm delete-student">Delete</button>
+        <button data-id="{{ .Id }}" class="btn btn-warning btn-sm edit-student">Edit</button>
+    </td>
+</tr>
+{{ end }}

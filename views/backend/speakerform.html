@@ -1,0 +1,47 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ .title }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="form-student" action="/manage-speakers/store" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+            <div class="form-group">
+               <label for="">Speaker Name</label>
+               <input id="speakername" type="text" name="speakername" value="{{ .speakers.SpeakerName }}" class="form-control">
+            </div>
+             <div class="form-group">
+                <label for="">Facebook</label>
+                <input id="facebook" type="text" name="facebook" value="{{ .speakers.Facebook  }}" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="">instagram</label>
+                <input type="text" id="instagram" name="instagram" value="{{ .speakers.Instagram  }}" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="">twiter</label>
+                <input type="text" id="twiter" name="twiter"  value="{{ .speakers.Twiter }}" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="">linkdin</label>
+                <input type="text" id="linkdin" name="linkdin"  value="{{ .speakers.Linkdin }}" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="">Image</label>
+                <input id="file" type="file" name="image"  value="{{ .speakers.Image }}" class="form-control">
+             </div> 
+             
+          </div>
+          <div class="modal-footer">
+            {{ if .speaker.Id }}
+            <input type="hidden" name="id" value="{{ .speaker.Id }}">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Change Data</button>
+            {{else}}
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save Data</button>
+            {{end}}
+          </div>
+      </form>
+    </div>
+  </div>

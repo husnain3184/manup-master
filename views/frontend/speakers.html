@@ -1,0 +1,19 @@
+{{ $number  := 0 }}
+{{ range .speakers }}
+   
+    {{ $number = increment $number 1 }}
+   <div class="member-item set-bg" data-setbg="../static/img/team-member/member-1.jpg">
+            <div class="mi-social">
+                <div class="mi-social-inner bg-gradient">
+                    <a href="{{ .Facebook }}"><i class="fa fa-facebook"></i></a>
+                    <a href="{{ .Instagram }}"><i class="fa fa-instagram"></i></a>
+                    <a href="{{ .Twiter }}"><i class="fa fa-twitter"></i></a>
+                    <a href="{{ .Linkdin }}"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="mi-text">
+                <h5>{{ .SpeakerName }}</h5>
+                <span>Speaker</span>
+            </div>
+        </div>
+{{ end }}
